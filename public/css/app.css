@@ -1,0 +1,19 @@
+#app {
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(65deg, #2f2ea3, rgb(31, 97, 184));
+}
+
+#app .navbar *:not(.dropdown-item) {
+    color: white;
+} 
+
+#app .nav-link {
+    border-bottom: 2px solid transparent;
+}
+
+#app .nav-link:hover {
+    transition: all .2s linear;
+    color: #bec5c5;
+    border-bottom: 2px solid white;
+}
