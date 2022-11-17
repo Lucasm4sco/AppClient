@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                    {{ __('Login realizado!') }}
+                    Sistema de gerenciamento de clientes
                 </div>
             </div>
         </div>

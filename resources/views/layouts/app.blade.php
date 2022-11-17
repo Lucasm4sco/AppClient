@@ -15,7 +15,7 @@
     <div id="app" class="d-flex flex-column">
         @include('layouts._includes._nav')
 
-        <main class="flex-grow-1 pt-5">
+        <main class="flex-grow-1 py-5">
             @yield('content')
         </main>
     </div>

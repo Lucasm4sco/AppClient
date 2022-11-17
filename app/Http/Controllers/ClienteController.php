@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Cliente;
 use Illuminate\Http\Request;
 
-class HomeController extends Controller
+class ClienteController extends Controller
 {
     public function __construct()
     {
@@ -13,6 +14,7 @@ class HomeController extends Controller
 
     public function index()
     {
-        return view('welcome');
+        $clientes = Cliente::all();
+        return view('cliente.index', compact('clientes'));
     }
 }
