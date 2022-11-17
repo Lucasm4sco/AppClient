@@ -5,9 +5,13 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">{{ __('Lista de Clientes') }}</div>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item active" aria-current="page">Lista de Clientes</li>
+                    </ol>
+                </nav>
 
-                <div class="card-body overflow-auto">
+                <div class="card-body overflow-auto pt-1">
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
@@ -15,7 +19,7 @@
                     @endif
 
                     <p>
-                        <a href="#" class="btn btn-info">Adicionar</a>
+                        <a href="{{ route('adicionar_cliente') }}" class="btn btn-info">Adicionar</a>
                     </p>
 
                     @if (!empty($clientes))
