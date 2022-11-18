@@ -17,3 +17,7 @@
     color: #bec5c5;
     border-bottom: 2px solid white;
 }
+
+.bi-x-lg::before {
+    font-size: 200;
+}
