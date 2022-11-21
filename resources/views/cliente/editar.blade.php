@@ -19,19 +19,39 @@
                         <input type="hidden" name="_method" value="put">
                         <div class="mb-3">
                             <label for="nome" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="nome" name="nome" required placeholder="Nome do cliente" value="{{$cliente['nome']}}">
+                            <input type="text" class="form-control {{ $errors->has('nome') ? 'is-invalid' : '' }}" id="nome" name="nome" required placeholder="Nome do cliente" value="{{$cliente['nome']}}">
+                            @if ($errors->has('nome'))
+                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                    {{ $errors->first('nome') }}
+                                </div>
+                            @endif
                         </div>
                         <div class="mb-3">
                             <label for="email" class="form-label">E-mail</label>
-                            <input type="email" name="email" required class="form-control" id="email" placeholder="E-mail do cliente" value="{{$cliente['email']}}">
+                            <input type="email" name="email" required class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" id="email" placeholder="E-mail do cliente" value="{{$cliente['email']}}">
+                            @if ($errors->has('email'))
+                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                    {{ $errors->first('email') }}
+                                </div>
+                            @endif
                         </div>
                         <div class="mb-3">
                             <label for="endereco" class="form-label">Endereço</label>
-                            <input type="text" class="form-control" id="endereco" name="endereco" required placeholder="Endereço do cliente" value="{{$cliente['endereco']}}">
+                            <input type="text" class="form-control {{ $errors->has('endereco') ? 'is-invalid' : '' }}" id="endereco" name="endereco" required placeholder="Endereço do cliente" value="{{$cliente['endereco']}}">
+                            @if ($errors->has('endereco'))
+                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                    {{ $errors->first('endereco') }}
+                                </div>
+                            @endif
                         </div>
                         <div class="mb-3">
                             <label for="telefone" class="form-label">Telefone</label>
-                            <input type="text" class="form-control" id="telefone" name="telefone" required placeholder="Telefone do cliente" value="{{$cliente['telefone']}}">
+                            <input type="text" class="form-control {{ $errors->has('telefone') ? 'is-invalid' : '' }}" id="telefone" name="telefone" required placeholder="Telefone do cliente" value="{{$cliente['telefone']}}">
+                            @if ($errors->has('telefone'))
+                                <div id="invalidCheck3Feedback" class="invalid-feedback">
+                                    {{ $errors->first('telefone') }}
+                                </div>
+                            @endif
                         </div>
                         
                         <button type="submit" class="btn btn-primary">Salvar</button>

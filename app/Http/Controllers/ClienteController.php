@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ClienteRequest;
 use App\Models\Cliente;
-use Illuminate\Http\Request;
 
 class ClienteController extends Controller
 {
@@ -29,7 +29,7 @@ class ClienteController extends Controller
         return view('cliente.detalhe', compact('cliente'));
     }
 
-    public function salvar(Request $request)
+    public function salvar(ClienteRequest $request)
     {
         Cliente::create([
             'nome' => $request['nome'],
@@ -50,7 +50,7 @@ class ClienteController extends Controller
         return view('cliente.editar', compact('cliente'));
     }
 
-    public function atualizar(Request $request, $id)
+    public function atualizar(ClienteRequest $request, $id)
     {
         Cliente::find($id)->update([
             'nome' => $request['nome'],

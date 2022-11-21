@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TelefoneRequest;
 use App\Models\Cliente;
 use App\Models\Telefone;
-use Illuminate\Http\Request;
 
 class TelefoneController extends Controller
 {
@@ -19,7 +19,7 @@ class TelefoneController extends Controller
         return view('telefone.adicionar', compact('cliente'));
     }
 
-    public function salvar(Request $request, $id)
+    public function salvar(TelefoneRequest $request, $id)
     {
         $cliente = Cliente::find($id);
         if(!$cliente){
@@ -42,7 +42,7 @@ class TelefoneController extends Controller
         return view('telefone.editar', compact('telefone'));
     }
 
-    public function atualizar(Request $request, $id)
+    public function atualizar(TelefoneRequest $request, $id)
     {
         $telefone = Telefone::find($id);
         $telefone->update([
