@@ -23,6 +23,12 @@ class ClienteController extends Controller
         return view('cliente.adicionar');
     }
 
+    public function detalhe($id)
+    {
+        $cliente = Cliente::find($id);
+        return view('cliente.detalhe', compact('cliente'));
+    }
+
     public function salvar(Request $request)
     {
         Cliente::create([
@@ -38,7 +44,7 @@ class ClienteController extends Controller
     {
         $cliente = Cliente::find($id);
         if(!$cliente){
-            return redirect()->route('adicionar_cliente')->with('status_error', 'Cliente selecionado não existente! Cadastrar:');
+            return redirect()->route('adicionar_cliente')->with('status_error', 'Cliente não existente! Cadastrar:');
         }
 
         return view('cliente.editar', compact('cliente'));

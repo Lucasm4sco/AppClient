@@ -9,6 +9,12 @@ class Telefone extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'cliente_id',
+        'titulo',
+        'telefone'
+    ];
+
     public function cliente()
     {
         return $this->belongsTo('App\Models\Cliente');

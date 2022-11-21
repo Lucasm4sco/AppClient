@@ -13,16 +13,6 @@
                 </nav>
 
                 <div class="card-body overflow-auto">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    @if (session('status_error'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status_error') }}
-                        </div>
-                    @endif
                 
                     <form action="{{route('atualizar_cliente', $cliente['id'])}}" method="POST">
                         @csrf

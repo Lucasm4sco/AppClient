@@ -38,7 +38,11 @@
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}
+                            {{ Session::forget('status') }}
                         </div>
+                        <?php 
+                            
+                            ?>
                     @endif
 
                     <p>
@@ -65,6 +69,7 @@
                                         <td>{{ $cliente['email'] }}</td>
                                         <td>{{ $cliente['endereco'] }}</td>
                                         <td class="d-flex flex-column gap-2">
+                                            <a href="{{route('detalhe_cliente', $cliente['id'])}}" class="btn btn-secondary btn-sm mb-2">Detalhe</a>
                                             <a href="{{route('editar_cliente', $cliente['id'])}}" class="btn btn-secondary btn-sm mb-2">Editar</a>
                                             <button type="button" class="btn btn-danger btn-sm btn-deletar" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="{{$cliente['id']}}">Excluir</button>
                                         </td>
@@ -87,4 +92,8 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('script')
+    <script src="/js/deletarCliente.js"></script>
 @endsection
