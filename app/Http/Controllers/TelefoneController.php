@@ -33,7 +33,7 @@ class TelefoneController extends Controller
             ])
         );
 
-        return redirect()->route('adicionar_telefone', $cliente['id'])->with('status', 'Telefone adicionado com sucesso!');;
+        return redirect()->route('detalhe_cliente', $cliente['id'])->with('status', 'Telefone adicionado com sucesso!');;
     }
 
     public function editar($id)
