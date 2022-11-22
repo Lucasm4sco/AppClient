@@ -11,7 +11,7 @@ class ClientesTabSeed extends Seeder
     
     public function run()
     {
-        Cliente::factory(5)->create()->each(function($cliente){
+        Cliente::factory(10)->create()->each(function($cliente){
 
             $cliente->telefones()->save(
                 Telefone::factory()->make([
